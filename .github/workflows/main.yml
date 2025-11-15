@@ -1,17 +1,12 @@
-name: Build Sales App
+name: Run Sales App
 
 on:
   push:
     branches: [ main ]
-  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        working-directory: CrudApplication
 
     steps:
       - name: Checkout code
@@ -24,11 +19,7 @@ jobs:
           java-version: '17'
 
       - name: Build project
-        run: mvn clean install
+        run: mvn -f "OneDrive/Desktop/CrudApplication (1)/CrudApplication/pom.xml" clean install
 
-      - name: Run app
-        run: mvn spring-boot:run
-
-
-      - name: Run app
-        run: mvn spring-boot:run
+      - name: Run project
+        run: mvn -f "OneDrive/Desktop/CrudApplication (1)/CrudApplication/pom.xml" spring-boot:run
