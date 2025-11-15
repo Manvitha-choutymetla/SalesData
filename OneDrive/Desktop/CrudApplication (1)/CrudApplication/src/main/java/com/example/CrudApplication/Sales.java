@@ -12,7 +12,7 @@ public class Sales {
     private Long id;
 
     private String productName;
-    private Boolean availability;
+    private Boolean availabilityy;
 
     public Long getId() {
         return id;
@@ -23,16 +23,16 @@ public class Sales {
     }
 
     public Boolean getAvailability() {
-        return availability;
+        return availabilityy;
     }
 
     public void setProductName(String productName) {
         this.productName = productName;
     }
 
-    public void setAvailability(Boolean availability) {
-        this.availability = availability;
+    public void setAvailability(Boolean availabilityy) {
+        this.availabilityy = availabilityy;
     }
-}
+}  
 
 
