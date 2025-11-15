@@ -1,8 +1,9 @@
-name: Run Sales App
+name: Build Spring App
 
 on:
   push:
     branches: [ main ]
+  pull_request:
 
 jobs:
   build:
@@ -19,8 +20,7 @@ jobs:
           java-version: '17'
 
       - name: Build project
-        run: mvn -f "CrudApplication/pom.xml" clean install
+        run: mvn clean install
 
       - name: Run app
-        run: mvn -f "CrudApplication/pom.xml" spring-boot:run
-
+        run: mvn spring-boot:run
