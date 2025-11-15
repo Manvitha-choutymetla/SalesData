@@ -3,11 +3,10 @@ name: Run Sales App
 on:
   push:
     branches: [ main ]
-  pull_request:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -20,7 +19,8 @@ jobs:
           java-version: '17'
 
       - name: Build project
-        run: mvn clean install
+        run: mvn -f "CrudApplication/pom.xml" clean install
 
       - name: Run app
-        run: mvn spring-boot:run
+        run: mvn -f "CrudApplication/pom.xml" spring-boot:run
+
